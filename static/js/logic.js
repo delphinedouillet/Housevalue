@@ -10,8 +10,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: API_KEY
 }).addTo(map);
 
-L.geoJson(statesData).addTo(map);
-
 function getColor(d) {
   return d > 1000 ? '#800026' :
          d > 500  ? '#BD0026' :
@@ -22,4 +20,22 @@ function getColor(d) {
          d > 10   ? '#FED976' :
                     '#FFEDA0';
 }
+
+function style(feature) {
+  return {
+      fillColor: getColor(feature.properties.density),
+      weight: 2,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+  };
+}
+
+L.geoJson(statesData, {style: style}).addTo(map);
+
+
+
+
+
 
