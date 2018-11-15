@@ -1,6 +1,9 @@
-from flask import Flask, render_template
-
-# Import our pymongo library, which lets us connect our Flask app to our Mongo database.
+from flask import Flask
+from flask import render_template
+from pymongo import MongoClient
+import json
+from bson import json_util
+from bson.json_util import dumps
 import pymongo
 
 
