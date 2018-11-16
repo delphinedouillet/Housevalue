@@ -11,19 +11,19 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(map);
 
 function getColor(d) {
-  return d > 1000 ? '#800026' :
-         d > 500  ? '#BD0026' :
-         d > 200  ? '#E31A1C' :
-         d > 100  ? '#FC4E2A' :
-         d > 50   ? '#FD8D3C' :
-         d > 20   ? '#FEB24C' :
-         d > 10   ? '#FED976' :
+  return d > 600000 ? '#800026' :
+         d > 500000  ? '#BD0026' :
+         d > 400000  ? '#E31A1C' :
+         d > 300000  ? '#FC4E2A' :
+         d > 200000   ? '#FD8D3C' :
+         d > 100000   ? '#FEB24C' :
+         d > 0   ? '#FED976' :
                     '#FFEDA0';
 }
 
 function style(feature) {
   return {
-      fillColor: getColor(feature.properties.density),
+      fillColor: getColor(feature.properties.housevalue),
       weight: 2,
       opacity: 1,
       color: 'white',
