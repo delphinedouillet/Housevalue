@@ -42,6 +42,11 @@ def house():
     # Return the template with the teams list passed in
     return render_template('Housingvalue.html')
 
+@app.route('/d3')
+def d3():
+    # Return the template with the teams list passed in
+    return render_template('d3.html')
+
 # @app.route("/Housingdata")
 # def Housingdata():
 #     connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
