@@ -24,7 +24,7 @@ function getColor(d) {
 
 function style(feature) {
   return {
-      fillColor: getColor(feature.properties.year2017),
+      fillColor: getColor(feature.properties.year2015),
       weight: 2,
       opacity: 1,
       color: 'white',
@@ -53,7 +53,7 @@ function highlightFeature(e) {
 
 function resetHighlight(e) {
   geojson.resetStyle(e.target);
-  //info.update();
+  info.update();
 }
 
 function zoomToFeature(e) {
@@ -67,7 +67,7 @@ function onEachFeature(feature, layer) {
       mouseout: resetHighlight,
      // click: zoomToFeature
   });
-  layer.bindPopup("<h2>" + feature.properties.name + "</h2> <hr> <h2>" + feature.properties.year2017 + "</h2>")
+  layer.bindPopup("<h2>" + feature.properties.name + "</h2> <hr> <h2>" + feature.properties.year2015 + "</h2>")
 }
 
 var geojson;
@@ -100,12 +100,6 @@ geojson = L.geoJson(statesData, {
 //     };
 
 //     legend.addTo(map);
-
-
-d3.select("#menu1").on("click",function(){
-  new_year = d3.select(this).text;
-  alert("New Year: " + new_year);
-});
 
 //   function style(feature) {
 //   return {

@@ -132,6 +132,16 @@ html {
   border-left: 6px solid red;
 }
 
+.axis {
+  font: 14px sans-serif;
+ }
+ 
+ .line {
+  fill: none;
+  stroke: orange;
+  stroke-width: 2px;
+ }
+
 /* media queries which will only be activated at specific screen sizes */
 @media (max-width: 800px) {
   #table-area td {
@@ -160,4 +170,8 @@ html {
 .iframeContainer {
   padding: 20px;
   border: 1px solid #e3e3e3;
+}
+
+.svg-area {
+  background : white;
 }

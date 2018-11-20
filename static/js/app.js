@@ -43,7 +43,7 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
     var yMax;
 
     xMin = d3.min(healthData, function(data) {
-        return +data.Population * 0.95;
+        return +data.Population * 0.05;
     });
 
     xMax = d3.max(healthData, function(data) {
@@ -51,7 +51,7 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
     });
 
     yMin = d3.min(healthData, function(data) {
-        return +data.Housing_Val * 0.98;
+        return +data.Housing_Val * 0.50;
     });
 
     yMax = d3.max(healthData, function(data) {
@@ -90,7 +90,7 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
             return yLinearScale(data.Housing_val)
         })
         .attr("r", "15")
-        .attr("fill", "blue")
+        .attr("fill", "lightgreen")
         // display tooltip on click
         .on("mouseenter", function(data) {
             toolTip.show(data);
@@ -109,10 +109,10 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
         .enter()
         .append("tspan")
             .attr("x", function(data) {
-                return xLinearScale(data.Population - 0);
+                return xLinearScale(data.Population - 0.5);
             })
             .attr("y", function(data) {
-                return yLinearScale(data.Housing_Val - 0.2);
+                return yLinearScale(data.Housing_Val - 0.5);
             })
             .text(function(data) {
                 return data.State
@@ -131,8 +131,8 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
     chart
         .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0-margin.left + 40)
-        .attr("x", 0 - height/2)
+        .attr("y", 0-margin.left + 10)
+        .attr("x", 0 - height/2 - 100)
         .attr("dy","1em")
         .attr("class", "axis-text")
         .text("Housing value in 2017 ($)")

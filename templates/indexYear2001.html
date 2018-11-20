@@ -55,7 +55,7 @@
     <div class="row">
       <div class="col-xs-12  col-md-9">
           <!-- We append our chart here. -->
-          <iframe src= "http://127.0.0.1:5000/housing" width = "1000" height = "550" frameborder ="0"><meta charset="utf-8"></iframe>
+          <iframe src= "http://127.0.0.1:5000/2001" width = "1000" height = "550" frameborder ="0"><meta charset="utf-8"></iframe>
         </div>
       </div>
     </div>
@@ -79,21 +79,14 @@
                       </div>
                     </div>
                   </div>
-                  <div id="svg-area"></div>
-                  <script src='../static/js/logicline.js'></script>
-          
-                  <table border=1>
-                  <tbody>
-                    <tr>
-                        <td>State</td>
+              
+                  <!-- <iframe src= "http://127.0.0.1:5000/d3" width = "1000" height = "550" frameborder ="0"></iframe>
+                  <div> -->
+                  <ul style="list-style: none;">
                     {% for house in Housing %}
-                      <td>{{ house.State }}</td>
-                      <td>Population</td>
-                      <td>{{ house.Population }}</td>
+                      <li>{{ house.RegionName }}: {{ house.RegionID }}</li>
                     {% endfor %}
-                    </tr>
-                  </tbody>
-                    </table>
+                  </ul>
                 </div>
             </div>
       </div>
