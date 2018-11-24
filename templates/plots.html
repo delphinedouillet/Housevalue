@@ -47,21 +47,45 @@
 <a href="#about">About</a>
 </div> 
 
-    <div class="row">
-      <div class="col-xs-12  col-md-9">
-          <!-- We append our chart here. -->
-          <iframe src= "http://127.0.0.1:5000/housing" width = "1000" height = "550" frameborder ="0"><meta charset="utf-8"></iframe>
+<div class="row">
+        <div class="col-xs-12  col-md-12">
+          <div class="article">
+              <div class="container text-center">
+                  <h1 class="title">Plot</h1>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xs-12 col-md-12">
+                        <h1>Average population vs Housing value in 2017</h1>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-12  col-md-9">
+                          <!-- We append our chart here. -->
+                          <!-- <div class="chart"></div> -->
+                          <iframe src= "http://127.0.0.1:5000/d3" width = "1000" height = "550" frameborder ="0"></iframe>
+                
+                        </div>
+                      </div>
+                    </div>
+                    <div id="svg-area"></div>
+                    <script src='../static/js/logicline.js'></script>
+            
+                    <table border=1>
+                    <tbody>
+                      <tr>
+                          <td>State</td>
+                      {% for house in Housing %}
+                        <td>{{ house.State }}</td>
+                        <td>Population</td>
+                        <td>{{ house.Population }}</td>
+                      {% endfor %}
+                      </tr>
+                    </tbody>
+                      </table>
+                  </div>
+              </div>
         </div>
       </div>
     </div>
-    
-  <!-- Footer-->
-  <footer class="footer">
-      <span class="bottom"> -- Delphine Douillet, Derek A Jones, Minhaj Haji --</span>
-    </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
- 
-
-</body>
-
-</html>
+    <!-- <script src="../static/js/app.js"></script> -->
+  

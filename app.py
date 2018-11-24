@@ -42,58 +42,16 @@ def house():
     # Return the template with the teams list passed in
     return render_template('Housingvalue.html')
 
-# Set route
-@app.route('/2001')
-def year2001():
-    # Return the template with the teams list passed in
-    return render_template('Year2001.html')
-
-# Set route
-@app.route('/index2001')
-def index2001():
-    # Return the template with the teams list passed in
-    return render_template('indexYear2001.html')
-
-# Set route
-@app.route('/2005')
-def year2005():
-    # Return the template with the teams list passed in
-    return render_template('Year2005.html')
-
-# Set route
-@app.route('/index2005')
-def index2005():
-    # Return the template with the teams list passed in
-    return render_template('indexYear2005.html')
-
-# Set route
-@app.route('/2010')
-def year2010():
-    # Return the template with the teams list passed in
-    return render_template('Year2010.html')
-
-# Set route
-@app.route('/index2010')
-def index2010():
-    # Return the template with the teams list passed in
-    return render_template('indexYear2010.html')
-
-# Set route
-@app.route('/2015')
-def year2015():
-    # Return the template with the teams list passed in
-    return render_template('Year2015.html')
-
-# Set route
-@app.route('/index2015')
-def index2015():
-    # Return the template with the teams list passed in
-    return render_template('indexYear2015.html')
 
 @app.route('/d3')
 def d3():
     # Return the template with the teams list passed in
     return render_template('d3.html')
+
+@app.route('/plot1')
+def plot():
+    # Return the template with the teams list passed in
+    return render_template('plots.html')
 
 # @app.route("/Housingdata")
 # def Housingdata():
