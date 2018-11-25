@@ -1,4 +1,4 @@
-Plotly.d3.csv('plotly.csv', function(err, rows){
+Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/delphine/static/js/plotly.csv', function(err, rows){
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -6,10 +6,12 @@ Plotly.d3.csv('plotly.csv', function(err, rows){
 
     var allCountryNames = unpack(rows, 'State'),
         allYear = unpack(rows, 'Year'),
-        allGdp = unpack(rows, 'Housing value'),
+        allGdp = unpack(rows, 'GDP'),
+        allHousing = unpack(rows, 'Housing value'),
         listofCountries = [],
         currentCountry,
         currentGdp = [],
+        currentHouse = [],
         currentYear = [];
 
     for (var i = 0; i < allCountryNames.length; i++ ){
@@ -25,6 +27,7 @@ Plotly.d3.csv('plotly.csv', function(err, rows){
             if ( allCountryNames[i] === chosenCountry ) {
                 currentGdp.push(allGdp[i]);
                 currentYear.push(allYear[i]);
+                currentHouse.push(allHousing[i]);
             }
         }
     };
@@ -38,19 +41,41 @@ Plotly.d3.csv('plotly.csv', function(err, rows){
         var trace1 = {
             x: currentYear,
             y: currentGdp,
+            name:'GDP per state',
             mode: 'lines+markers',
             marker: {
                 size: 12,
                 opacity: 0.5
             }
+        
+          };
+
+        var trace2 = {
+          x: currentYear,
+          y: currentHouse,
+          yaxis: 'y2',
+          name:'Housing value',
+          mode: 'lines+markers',
+          marker: {
+          size: 12,
+          opacity: 0.5
+          }
+
         };
 
-        var data = [trace1];
+        var data = [trace1,trace2];
 
         var layout = {
             title:'Line and Scatter Plot',
-            height: 400,
-            width: 480
+            height: 500,
+            width: 580,
+            yaxis2: {
+              title: 'yaxis2 title',
+              titlefont: {color: 'rgb(148, 103, 189)'},
+              tickfont: {color: 'rgb(148, 103, 189)'},
+              overlaying: 'y',
+              side: 'right'
+            }
         };
 
         Plotly.newPlot('plotdiv', data, layout);
