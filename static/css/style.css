@@ -53,6 +53,14 @@ h3 {
   font-size: 20px;
 } 
 
+h4 {
+  font-family: 'Rancho', serif;
+  opacity: 0.7;
+  text-align: left;
+  font-size: 40px;
+  position:center;
+} 
+
 /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
 .wrapper {
   position: relative;
@@ -149,6 +157,10 @@ h3 {
 }
 
 .svg-area {
+  background : white;
+}
+
+.svg {
   background : white;
 }
 

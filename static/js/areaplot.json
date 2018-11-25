@@ -1,0 +1,257 @@
+[
+    {
+      "State": "AL",
+      "Population": 4874747,
+      "Housing_Val": 121400
+    },
+    {
+      "State": "AK",
+      "Population": 739795,
+      "Housing_Val": 308400
+    },
+    {
+      "State": "AZ",
+      "Population": 7016270,
+      "Housing_Val": 230900
+    },
+    {
+      "State": "AR",
+      "Population": 3004279,
+      "Housing_Val": 116900
+    },
+    {
+      "State": "CA",
+      "Population": 39536653,
+      "Housing_Val": 521800
+    },
+    {
+      "State": "CO",
+      "Population": 5607154,
+      "Housing_Val": 350800
+    },
+    {
+      "State": "CT",
+      "Population": 3588184,
+      "Housing_Val": 236000
+    },
+    {
+      "State": "DE",
+      "Population": 961939,
+      "Housing_Val": 236400
+    },
+    {
+      "State": "DC",
+      "Population": 693972,
+      "Housing_Val": 548500
+    },
+    {
+      "State": "FL",
+      "Population": 20984400,
+      "Housing_Val": 214200
+    },
+    {
+      "State": "GA",
+      "Population": 10429379,
+      "Housing_Val": 166900
+    },
+    {
+      "State": "HI",
+      "Population": 1427538,
+      "Housing_Val": 589300
+    },
+    {
+      "State": "ID",
+      "Population": 1716943,
+      "Housing_Val": 219200
+    },
+    {
+      "State": "IL",
+      "Population": 12802023,
+      "Housing_Val": 171200
+    },
+    {
+      "State": "IN",
+      "Population": 6666818,
+      "Housing_Val": 128000
+    },
+    {
+      "State": "IA",
+      "Population": 3145711,
+      "Housing_Val": 136900
+    },
+    {
+      "State": "KS",
+      "Population": 2913123,
+      "Housing_Val": 131400
+    },
+    {
+      "State": "KY",
+      "Population": 4454189,
+      "Housing_Val": 135000
+    },
+    {
+      "State": "LA",
+      "Population": 4684333,
+      "Housing_Val": 142300
+    },
+    {
+      "State": "ME",
+      "Population": 1335907,
+      "Housing_Val": 216600
+    },
+    {
+      "State": "MD",
+      "Population": 6052177,
+      "Housing_Val": 275800
+    },
+    {
+      "State": "MA",
+      "Population": 6859819,
+      "Housing_Val": 384000
+    },
+    {
+      "State": "MI",
+      "Population": 9962311,
+      "Housing_Val": 137500
+    },
+    {
+      "State": "MN",
+      "Population": 5576606,
+      "Housing_Val": 218700
+    },
+    {
+      "State": "MS",
+      "Population": 2984100,
+      "Housing_Val": 117000
+    },
+    {
+      "State": "MO",
+      "Population": 6113532,
+      "Housing_Val": 147100
+    },
+    {
+      "State": "MT",
+      "Population": 1050493,
+      "Housing_Val": 214500
+    },
+    {
+      "State": "NE",
+      "Population": 1920076,
+      "Housing_Val": 152000
+    },
+    {
+      "State": "NV",
+      "Population": 2998039,
+      "Housing_Val": 258600
+    },
+    {
+      "State": "NH",
+      "Population": 1342795,
+      "Housing_Val": 255100
+    },
+    {
+      "State": "NJ",
+      "Population": 9005644,
+      "Housing_Val": 306600
+    },
+    {
+      "State": "NM",
+      "Population": 2088070,
+      "Housing_Val": 179000
+    },
+    {
+      "State": "NY",
+      "Population": 19849399,
+      "Housing_Val": 277400
+    },
+    {
+      "State": "NC",
+      "Population": 10273419,
+      "Housing_Val": 167100
+    },
+    {
+      "State": "ND",
+      "Population": 755393,
+      "Housing_Val": 203300
+    },
+    {
+      "State": "OH",
+      "Population": 11658609,
+      "Housing_Val": 129200
+    },
+    {
+      "State": "OK",
+      "Population": 3930864,
+      "Housing_Val": 116400
+    },
+    {
+      "State": "OR",
+      "Population": 4142776,
+      "Housing_Val": 323000
+    },
+    {
+      "State": "PA",
+      "Population": 12805537,
+      "Housing_Val": 163300
+    },
+    {
+      "State": "RI",
+      "Population": 1059639,
+      "Housing_Val": 265500
+    },
+    {
+      "State": "SC",
+      "Population": 5024369,
+      "Housing_Val": 153100
+    },
+    {
+      "State": "SD",
+      "Population": 869666,
+      "Housing_Val": 176200
+    },
+    {
+      "State": "TN",
+      "Population": 6715984,
+      "Housing_Val": 151100
+    },
+    {
+      "State": "TX",
+      "Population": 28304596,
+      "Housing_Val": 179500
+    },
+    {
+      "State": "UT",
+      "Population": 3101833,
+      "Housing_Val": 291300
+    },
+    {
+      "State": "VT",
+      "Population": 623657,
+      "Housing_Val": 194100
+    },
+    {
+      "State": "VA",
+      "Population": 8470020,
+      "Housing_Val": 246400
+    },
+    {
+      "State": "WA",
+      "Population": 7405743,
+      "Housing_Val": 354700
+    },
+    {
+      "State": "WV",
+      "Population": 1815857,
+      "Housing_Val": 92400
+    },
+    {
+      "State": "WI",
+      "Population": 5795483,
+      "Housing_Val": 173600
+    },
+    {
+      "State": "WY",
+      "Population": 579315,
+      "Housing_Val": 213000
+    }
+  ]
