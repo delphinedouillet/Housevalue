@@ -7,7 +7,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/del
     var allCountryNames = unpack(rows, 'State'),
         allYear = unpack(rows, 'Year'),
         allGdp = unpack(rows, 'GDP'),
-        allHousing = unpack(rows, 'Housing value'),
+        allHousing = unpack(rows, 'Housing'),
         listofCountries = [],
         currentCountry,
         currentGdp = [],
@@ -23,6 +23,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/del
     function getCountryData(chosenCountry) {
         currentGdp = [];
         currentYear = [];
+        currentHouse =[];
         for (var i = 0 ; i < allCountryNames.length ; i++){
             if ( allCountryNames[i] === chosenCountry ) {
                 currentGdp.push(allGdp[i]);
@@ -66,7 +67,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/del
         var data = [trace1,trace2];
 
         var layout = {
-            title:'Line and Scatter Plot',
+            title:'Housing value and GDP',
             height: 500,
             width: 580,
             yaxis2: {
