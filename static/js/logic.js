@@ -22,16 +22,6 @@ function getColor(d) {
                     '#FFEDA0';
 }
 
-function style(feature) {
-  return {
-      fillColor: getColor(feature.properties.year2017),
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      dashArray: '3',
-      fillOpacity: 0.7
-  };
-}
 
 function highlightFeature(e) {
   var layer = e.target;
@@ -46,7 +36,6 @@ function highlightFeature(e) {
   if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
       layer.bringToFront();
   }
-
   info.update(layer.feature.properties);
 }
 
@@ -60,14 +49,24 @@ function zoomToFeature(e) {
   map.fitBounds(e.target.getBounds());
 }
 
-
 function onEachFeature(feature, layer) {
   layer.on({
       mouseover: highlightFeature,
       mouseout: resetHighlight,
      // click: zoomToFeature
   });
-  layer.bindPopup("<h2>" + feature.properties.name + "</h2> <hr> <h2>" + feature.properties.year2017 + "</h2>")
+  layer.bindPopup("<h3>" + feature.properties.name + "</h3> <hr> <h3>" + feature.properties.year2017 + "</h3>")
+}
+
+function style(feature) {
+  return {
+      fillColor: getColor(feature.properties.year2017),
+      weight: 2,
+      opacity: 1,
+      color: 'white',
+      dashArray: '3',
+      fillOpacity: 0.7
+  };
 }
 
 var geojson;
@@ -77,48 +76,71 @@ geojson = L.geoJson(statesData, {
   onEachFeature: onEachFeature
 }).addTo(map);
 
-// var legend = L.control({position: ‘bottomright’});
 
-//     legend.onAdd = function (map) {
-
-//         var div = L.DomUtil.create(‘div’, ‘info legend’),
-//             grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-//             labels = [],
-//             from, to;
-
-//         for (var i = 0; i < grades.length; i++) {
-//             from = grades[i];
-//             to = grades[i + 1];
-
-//             labels.push(
-//                 ‘<i style=“background:’ + getColor(from + 1) + ‘“></i> ’ +
-//                 from + (to ? ‘&ndash;’ + to : ‘+’));
-//         }
-
-//         div.innerHTML = labels.join(‘<br>’);
-//         return div;
-//     };
-
-//     legend.addTo(map);
-
-
-d3.select("#menu1").on("click",function(){
-  new_year = d3.select(this).text;
-  alert("New Year: " + new_year);
+document.getElementById('slider').addEventListener('input', function(e) {
+  var selection = parseInt(e.target.value);
+  var new_year = 'year'+selection
+  console.log(new_year)
+  // update the map
+  function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.new_year),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+  };
+  // update text in the UI
+  document.getElementById('year').innerText = selection;
+  L.geoJson(statesData, {
+    style: style,
+    onEachFeature: onEachFeature
+  }).addTo(map);
 });
 
-//   function style(feature) {
+
+
+
+// inputNumberMin.addEventListener('change', function style(feature){
+//   var y = 'year' + this.value
+//   console.log(y)
 //   return {
-//       fillColor: getColor(feature.properties.new_year),
+//       fillColor: getColor(feature.properties.year2016),
 //       weight: 2,
 //       opacity: 1,
 //       color: 'white',
 //       dashArray: '3',
 //       fillOpacity: 0.7
 //   };
-// };
+// });
+// L.geoJson(statesData, {
+//   style: style
+// }).addTo(map);
 
-// L.geoJson(statesData, {style: style}).addTo(map);
+
+// legend
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+    grades = [-1,-0.25, -0.1, -0.05,0.001, 0.05, 0.1, 0.25],
+    colors = ['#FFEDA0','#FED976','#FEB24C','#FD8D3C','#FC4E2A','#E31A1C','#BD0026','#800026']
+    labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + colors[i] + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+}
+
+return div;
+};
+
+legend.addTo(map);
   
 
 

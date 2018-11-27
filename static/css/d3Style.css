@@ -36,6 +36,7 @@
 }
 
 .chart {
+  position:center;
   display: block;
   margin: 0;
 }
@@ -74,5 +75,9 @@
 }
 
 .line {
+  background: white;
+}
+
+.svg {
   background: white;
 }
