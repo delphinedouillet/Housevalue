@@ -27,14 +27,22 @@
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
   </head>
   <body>
+      
+
 
     <!-- The div where we will inject our map -->
-    <div id="map">
-    </div>
-    <script type="text/javascript" src="../static/js/Year2001.js"></script>
+    <div class='session' id='sliderbar'>
+        <h2>Analyzing housing value changes over the past 20 years <br> Select a year: <label id='year'>2010</label></h2>
+        <input id='slider' class='row' type='range' min='2001' max='2017' step='1' value='2010' style="width: 500px;"/>
+      </div>      
+
+    <div id="map"></div>
+    <script type="text/javascript" src="../static/js/logic.js"></script>
 
 
       </div>
