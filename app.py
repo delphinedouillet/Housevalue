@@ -10,31 +10,25 @@ import pymongo
 # Create an instance of our Flask app.
 app = Flask(__name__)
 
-# MONGODB_HOST = 'localhost'
-# MONGODB_PORT = 27017
-# DBS_NAME = 'map_db'
-# COLLECTION_NAME = 'Housing'
-# FIELDS = {'RegionID': True, '_id': True}
+# # Create connection variable
+# conn = 'mongodb://localhost:27017'
 
-# Create connection variable
-conn = 'mongodb://localhost:27017'
+# # Pass connection to the pymongo instance.
+# client = pymongo.MongoClient(conn)
 
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
-
-# Connect to a database. Will create one if not already available.
-db = client.map_db
+# # Connect to a database. Will create one if not already available.
+# db = client.map_db
 
 
 # Set route
 @app.route('/')
 def index():
     # Store the entire team collection in a list
-    Housing = list(db.housing.find())
-    print(Housing)
+    # Housing = list(db.housing.find())
+    # print(Housing)
 
     # Return the template with the teams list passed in
-    return render_template('index.html',Housing=Housing)
+    return render_template('index.html')
 
 # Set route
 @app.route('/housing')
