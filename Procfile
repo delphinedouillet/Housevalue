@@ -1,1 +1,1 @@
-web: gunicorn BiodiversityApp.app:app
+web: gunicorn HousevalueApp.app:app
