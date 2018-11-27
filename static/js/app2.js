@@ -69,7 +69,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/del
         var layout = {
             title:'Housing value and GDP',
             height: 500,
-            width: 580,
+            width: 800,
             yaxis2: {
               title: 'yaxis2 title',
               titlefont: {color: 'rgb(148, 103, 189)'},
