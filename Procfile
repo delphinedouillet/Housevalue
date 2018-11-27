@@ -1,1 +1,1 @@
-web: gunicorn housingvalueApp.app:app
+web: gunicorn HousevalueApp.app:app
