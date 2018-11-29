@@ -54,7 +54,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/housingvalue/m
         var trace2 = {
           x: currentYear,
           y: currentHouse,
-          yaxis: 'Housing value',
+          yaxis: 'y2',
           name:'Housing value',
           mode: 'lines+markers',
           marker: {
@@ -71,7 +71,7 @@ Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/housingvalue/m
             height: 500,
             width: 800,
             yaxis2: {
-              title: 'yaxis2 title',
+              title: 'Housing value',
               titlefont: {color: 'rgb(148, 103, 189)'},
               tickfont: {color: 'rgb(148, 103, 189)'},
               overlaying: 'y',
