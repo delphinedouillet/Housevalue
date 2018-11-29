@@ -87,7 +87,7 @@ document.getElementById('slider').addEventListener('input', function(e) {
         mouseout: resetHighlight,
        // click: zoomToFeature
     });
-    layer.bindPopup("<h3>" + feature.properties.name + "</h3> <hr> <h3>" + feature.properties[new_year] + "</h3>")
+    layer.bindPopup("<h3>" + feature.properties.name + "</h3> <hr> <h3> % of change over the past year <br>" + feature.properties[new_year] + " </h3>")
   }
   
   // update text in the UI
@@ -97,26 +97,6 @@ document.getElementById('slider').addEventListener('input', function(e) {
     onEachFeature: onEachFeature
   }).addTo(map);
 });
-
-
-
-
-// inputNumberMin.addEventListener('change', function style(feature){
-//   var y = 'year' + this.value
-//   console.log(y)
-//   return {
-//       fillColor: getColor(feature.properties.year2016),
-//       weight: 2,
-//       opacity: 1,
-//       color: 'white',
-//       dashArray: '3',
-//       fillOpacity: 0.7
-//   };
-// });
-// L.geoJson(statesData, {
-//   style: style
-// }).addTo(map);
-
 
 // legend
 var legend = L.control({position: 'bottomright'});
@@ -132,7 +112,7 @@ legend.onAdd = function (map) {
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + colors[i] + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            grades[i] + (grades[i + 1] ? '% to ' + grades[i + 1] + '% <br>' : '% or more');
 }
 
 return div;

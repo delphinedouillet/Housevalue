@@ -72,7 +72,7 @@ d3.csv("static/js/scatterplot.csv", function(healthData) {
             var Population = +data.Population;
             var Housing = +data.Housing_Val;
             return (
-                stateName + '<br> <hr> Population in 2017: ' + Population + ' <br> Housing value in 2017: ' + Housing
+                stateName + '<br> <hr> Population: ' + Population + ' <br> Housing value: ' + Housing
             );
         });
 
