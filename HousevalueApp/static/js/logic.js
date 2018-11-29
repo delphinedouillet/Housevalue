@@ -22,22 +22,22 @@ function getColor(d) {
                     '#FFEDA0';
 }
 
-function style(feature) {
-  return {
-      fillColor: getColor(feature.properties.year2017),
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      dashArray: '3',
-      fillOpacity: 0.7
-  };
-}
+// function style(feature) {
+//   return {
+//       fillColor: getColor(feature.properties.year2017),
+//       weight: 2,
+//       opacity: 1,
+//       color: 'white',
+//       dashArray: '3',
+//       fillOpacity: 0.7
+//   };
+// }
 
-var geojson;
+// var geojson;
 
-geojson = L.geoJson(statesData, {
-  style: style
-}).addTo(map);
+// geojson = L.geoJson(statesData, {
+//   style: style
+// }).addTo(map);
 
 
 document.getElementById('slider').addEventListener('input', function(e) {
@@ -58,7 +58,6 @@ document.getElementById('slider').addEventListener('input', function(e) {
 
   function highlightFeature(e) {
     var layer = e.target;
-  
     layer.setStyle({
         weight: 5,
         color: '#666',
@@ -69,8 +68,14 @@ document.getElementById('slider').addEventListener('input', function(e) {
   
   
   function resetHighlight(e) {
-    geojson.resetStyle(e.target);
-  }
+    var layer = e.target;
+    layer.setStyle({
+        weight: 0,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+  };
   
   function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
