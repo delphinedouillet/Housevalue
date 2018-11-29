@@ -1,7 +1,9 @@
-# housingvalue
+# Housing value visualization
 
-Overview of the housing value change in the US (compared to the GDP per State and population) using choropleth, plotly and d3.
+Overview of the housing value changes in the US (compared to the GDP per State and population) using choropleth.js, plotly.js and d3.js.
 
-![screenshot 2018-11-28 20 58 30](https://user-images.githubusercontent.com/38790598/49196399-690a0e00-f350-11e8-9fbd-538e78428092.png)
 
 Take a look at : https://housingvalue.herokuapp.com/
+
+![screenshot 2018-11-28 21 21 33](https://user-images.githubusercontent.com/38790598/49197197-a15f1b80-f353-11e8-8ccc-1140d831f74d.png)
+
