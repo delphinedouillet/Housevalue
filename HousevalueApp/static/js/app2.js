@@ -1,4 +1,4 @@
-Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/Housevalue/master/static/js/plotlyformatted.csv', function(err, rows){
+Plotly.d3.csv('https://raw.githubusercontent.com/delphinedouillet/housingvalue/master/HousevalueApp/static/js/plotlyformatted.csv', function(err, rows){
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });

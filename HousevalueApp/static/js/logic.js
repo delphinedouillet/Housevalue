@@ -22,42 +22,6 @@ function getColor(d) {
                     '#FFEDA0';
 }
 
-
-function highlightFeature(e) {
-  var layer = e.target;
-
-  layer.setStyle({
-      weight: 5,
-      color: '#666',
-      dashArray: '',
-      fillOpacity: 0.7
-  });
-
-  if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-      layer.bringToFront();
-  }
-  info.update(layer.feature.properties);
-}
-
-
-function resetHighlight(e) {
-  geojson.resetStyle(e.target);
-  //info.update();
-}
-
-function zoomToFeature(e) {
-  map.fitBounds(e.target.getBounds());
-}
-
-function onEachFeature(feature, layer) {
-  layer.on({
-      mouseover: highlightFeature,
-      mouseout: resetHighlight,
-     // click: zoomToFeature
-  });
-  layer.bindPopup("<h3>" + feature.properties.name + "</h3> <hr> <h3>" + feature.properties.year2017 + "</h3>")
-}
-
 function style(feature) {
   return {
       fillColor: getColor(feature.properties.year2017),
@@ -72,19 +36,18 @@ function style(feature) {
 var geojson;
 
 geojson = L.geoJson(statesData, {
-  style: style,
-  onEachFeature: onEachFeature
+  style: style
 }).addTo(map);
 
 
 document.getElementById('slider').addEventListener('input', function(e) {
   var selection = parseInt(e.target.value);
-  var new_year = 'year'+selection
-  console.log(new_year)
+  var new_year = 'year'+selection;
   // update the map
   function style(feature) {
+    console.log(new_year)
     return {
-        fillColor: getColor(feature.properties.new_year),
+        fillColor: getColor(feature.properties[new_year]),
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -92,6 +55,36 @@ document.getElementById('slider').addEventListener('input', function(e) {
         fillOpacity: 0.7
     };
   };
+
+  function highlightFeature(e) {
+    var layer = e.target;
+  
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+  };
+  
+  
+  function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+  }
+  
+  function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+  }
+  
+  function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+       // click: zoomToFeature
+    });
+    layer.bindPopup("<h3>" + feature.properties.name + "</h3> <hr> <h3>" + feature.properties[new_year] + "</h3>")
+  }
+  
   // update text in the UI
   document.getElementById('year').innerText = selection;
   L.geoJson(statesData, {
